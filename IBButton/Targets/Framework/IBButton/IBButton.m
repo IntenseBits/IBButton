@@ -155,9 +155,7 @@
 	[self setNeedsDisplay];
 }
 
-
-//
--(NSSize)intrinsicContentSize
+-(NSSize)sizeWithPadding:(BOOL)padding
 {
 	NSAttributedString *attrString = [self attributedStringFromTitle:self.attributedStringValue];
 	
@@ -165,23 +163,25 @@
 	
 	CGSize size = rect.size;
  
+	if (padding)
+	{
 	size.width += _horizontalPadding * 2.0f;
 	size.height += _verticalPadding * 2.0f;
+	}
 	
 	
 	return size;
-	
-	
+}
+//
+-(NSSize)intrinsicContentSize
+{
+	return [self sizeWithPadding:YES];
+
 }
 
 -(void)drawRect:(NSRect)dirtyRect
 {
 	NSRect frame = self.bounds;
-	NSGraphicsContext* ctx = [NSGraphicsContext currentContext];
-
-	CGFloat cornerRadius = self.cornerRadius;
-
-	
 	
 	//if the user has clicked down on the button
 	if([self isHighlighted])
@@ -215,18 +215,7 @@
 		return;
 	}
 	
-//	// create background color
-//	[ctx saveGraphicsState];
-//	[[NSBezierPath bezierPathWithRoundedRect:frame
-//									 xRadius:roundedRadius
-//									 yRadius:roundedRadius] setClip];
-//	[[color darkenColorByValue:0.12f] setFill];
-//	NSRectFillUsingOperation(frame, NSCompositeSourceOver);
-//	[ctx restoreGraphicsState];
-	
-	
-	//draw inner button area
-	
+
 	[self drawBackgroundWithColour:self.backgroundColour withGradient:YES];
 	//make a note of our intrisic content size
 	[self drawTitle:self.attributedTitle withFrame:self.bounds inView:self];
@@ -294,12 +283,13 @@
 	NSAttributedString *attrString = [self attributedStringFromTitle:title];
 	
 	
-	CGSize size = self.intrinsicContentSize;
+	CGSize size = [self sizeWithPadding:NO];
 	
 	
 	
 	CGFloat x,y;
-	
+	NSLog(@"Our frame %@",NSStringFromRect(self.frame));
+	NSLog(@"Our size %@",NSStringFromSize(size));
 	x = (frame.size.width - size.width)/2.0f;
 	y = (frame.size.height - size.height)/2.0f;
 	
@@ -330,6 +320,10 @@
 	//Allows us to be notified when mouse hovers over us
 	NSTrackingArea* ta = [[NSTrackingArea alloc] initWithRect:NSZeroRect options:NSTrackingInVisibleRect | NSTrackingActiveAlways | NSTrackingMouseEnteredAndExited owner:self userInfo:nil];
 	[self addTrackingArea:ta];
+	
+	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+		[self setNeedsDisplay];
+	});
 }
 
 
