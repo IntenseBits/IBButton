@@ -21,6 +21,8 @@
 		83AF0B141D2EC0EB00E8FE59 /* UIView+OSConstraints.m in Sources */ = {isa = PBXBuildFile; fileRef = 83AF0B0C1D2EC0EB00E8FE59 /* UIView+OSConstraints.m */; };
 		83AF0B151D2EC16800E8FE59 /* IBButtonFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83AF0ACE1D2EBF5300E8FE59 /* IBButtonFramework.framework */; };
 		83AF0B161D2EC16800E8FE59 /* IBButtonFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 83AF0ACE1D2EBF5300E8FE59 /* IBButtonFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		83AF0B1C1D2ED02600E8FE59 /* IBView.h in Headers */ = {isa = PBXBuildFile; fileRef = 83AF0B1A1D2ED02600E8FE59 /* IBView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		83AF0B1D1D2ED02600E8FE59 /* IBView.m in Sources */ = {isa = PBXBuildFile; fileRef = 83AF0B1B1D2ED02600E8FE59 /* IBView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +68,8 @@
 		83AF0B0A1D2EC0EB00E8FE59 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		83AF0B0B1D2EC0EB00E8FE59 /* UIView+OSConstraints.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+OSConstraints.h"; sourceTree = "<group>"; };
 		83AF0B0C1D2EC0EB00E8FE59 /* UIView+OSConstraints.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+OSConstraints.m"; sourceTree = "<group>"; };
+		83AF0B1A1D2ED02600E8FE59 /* IBView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBView.h; sourceTree = "<group>"; };
+		83AF0B1B1D2ED02600E8FE59 /* IBView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IBView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +157,8 @@
 		83AF0B041D2EC0EB00E8FE59 /* IBButton */ = {
 			isa = PBXGroup;
 			children = (
+				83AF0B1A1D2ED02600E8FE59 /* IBView.h */,
+				83AF0B1B1D2ED02600E8FE59 /* IBView.m */,
 				83AF0B051D2EC0EB00E8FE59 /* IBButton.h */,
 				83AF0B061D2EC0EB00E8FE59 /* IBButton.m */,
 				83AF0B071D2EC0EB00E8FE59 /* NSColor+ColorExtensions.h */,
@@ -172,6 +178,7 @@
 				83AF0B0F1D2EC0EB00E8FE59 /* NSColor+ColorExtensions.h in Headers */,
 				83AF0B131D2EC0EB00E8FE59 /* UIView+OSConstraints.h in Headers */,
 				83AF0B111D2EC0EB00E8FE59 /* IBButtonFramework.h in Headers */,
+				83AF0B1C1D2ED02600E8FE59 /* IBView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,6 +283,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				83AF0B101D2EC0EB00E8FE59 /* NSColor+ColorExtensions.m in Sources */,
+				83AF0B1D1D2ED02600E8FE59 /* IBView.m in Sources */,
 				83AF0B141D2EC0EB00E8FE59 /* UIView+OSConstraints.m in Sources */,
 				83AF0B0E1D2EC0EB00E8FE59 /* IBButton.m in Sources */,
 			);

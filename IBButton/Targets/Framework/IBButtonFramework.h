@@ -19,3 +19,4 @@ FOUNDATION_EXPORT const unsigned char IBButtonVersionString[];
 
 #import "IBButton.h"
 #import "NSColor+ColorExtensions.h"
+#import "IBView.h"

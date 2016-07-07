@@ -12,7 +12,7 @@
 
 @interface IBButton ()
 {
-	CGSize contentSize;
+	
 }
 
 @end
@@ -161,11 +161,10 @@
 {
 	NSAttributedString *attrString = [self attributedStringFromTitle:self.attributedStringValue];
 	
-	CGRect rect = [attrString boundingRectWithSize:CGSizeMake(self.frame.size.width, CGFLOAT_MAX) options: NSStringDrawingUsesFontLeading | NSStringDrawingUsesLineFragmentOrigin context:nil];
+	CGRect rect = [attrString boundingRectWithSize:CGSizeMake(self.frame.size.width,self.frame.size.height) options: NSStringDrawingUsesFontLeading |NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesLineFragmentOrigin context:nil];
 	
 	CGSize size = rect.size;
  
-	
 	size.width += _horizontalPadding * 2.0f;
 	size.height += _verticalPadding * 2.0f;
 	
@@ -187,10 +186,10 @@
 	//if the user has clicked down on the button
 	if([self isHighlighted])
 	{
-		[self drawBackgroundWithColour:self.highlightBackgroundColour];
+		[self drawBackgroundWithColour:self.highlightBackgroundColour withGradient:YES];
 		
 		//draw title and set content size for intrisic content size method
-		contentSize = [self drawTitle:self.attributedTitle withFrame:self.bounds inView:self].size;
+		[self drawTitle:self.attributedTitle withFrame:self.bounds inView:self];
 		return;
 	}
 	else if(self.isMouseOver)
@@ -210,7 +209,7 @@
 		[bgGradient drawInRect:[bgPath bounds] angle:_gradientAngle];
 		
 		//draw title and set content size for intrisic content size method
-		contentSize = [self drawTitle:self.attributedTitle withFrame:self.bounds inView:self].size;
+		[self drawTitle:self.attributedTitle withFrame:self.bounds inView:self];
 		
 		
 		return;
@@ -227,37 +226,43 @@
 	
 	
 	//draw inner button area
-	[ctx saveGraphicsState];
 	
-
-	NSBezierPath* bgPath = [NSBezierPath bezierPathWithRect:frame];
-	[bgPath setClip];
-	
-	NSColor* topColor = [self.backgroundColour lightenColorByValue:0.12f];
-	
-	// gradient for inner portion of button
-	NSGradient* bgGradient = [[NSGradient alloc] initWithColorsAndLocations:
-							  topColor, 0.0f,
-							  self.backgroundColour, 1.0f,
-							  nil];
-	[bgGradient drawInRect:[bgPath bounds] angle:_gradientAngle];
-	
+	[self drawBackgroundWithColour:self.backgroundColour withGradient:YES];
 	//make a note of our intrisic content size
-	contentSize = [self drawTitle:self.attributedTitle withFrame:self.bounds inView:self].size;
-	[ctx restoreGraphicsState];
+	[self drawTitle:self.attributedTitle withFrame:self.bounds inView:self];
+	
 
 }
 
 
 
 
--(void)drawBackgroundWithColour:(NSColor*)colour
+-(void)drawBackgroundWithColour:(NSColor*)colour withGradient:(BOOL)gradient
 {
 	NSGraphicsContext* ctx = [NSGraphicsContext currentContext];
 	[ctx saveGraphicsState];
-	[[NSBezierPath bezierPathWithRect:self.bounds] setClip];
-	[colour setFill];
-	NSRectFillUsingOperation(self.bounds, NSCompositeSourceOver);
+	
+	
+	
+	if (gradient && colour.alphaComponent != 0)
+	{
+		NSColor* topColor = [colour lightenColorByValue:0.12f];
+		
+		NSBezierPath* bgPath = [NSBezierPath bezierPathWithRect:self.bounds];
+		[bgPath setClip];
+		
+		// gradient for inner portion of button
+		NSGradient* bgGradient = [[NSGradient alloc] initWithColorsAndLocations:
+								  topColor, 0.0f,
+								  colour, 1.0f,
+								  nil];
+		[bgGradient drawInRect:[bgPath bounds] angle:_gradientAngle];
+	}
+	else
+	{
+		[colour setFill];
+		NSRectFillUsingOperation(self.bounds, NSCompositeSourceOver);
+	}
 	
 	[ctx restoreGraphicsState];
 	
@@ -282,22 +287,21 @@
 }
 
 
-- (NSRect) drawTitle:(NSAttributedString *)title withFrame:(NSRect)frame inView:(NSView *)controlView {
+- (void) drawTitle:(NSAttributedString *)title withFrame:(NSRect)frame inView:(NSView *)controlView {
 	NSGraphicsContext* ctx = [NSGraphicsContext currentContext];
 	
 	[ctx saveGraphicsState];
 	NSAttributedString *attrString = [self attributedStringFromTitle:title];
 	
 	
+	CGSize size = self.intrinsicContentSize;
 	
-	CGRect rect = [attrString boundingRectWithSize:CGSizeMake(frame.size.width, CGFLOAT_MAX) options: NSStringDrawingUsesFontLeading | NSStringDrawingUsesLineFragmentOrigin context:nil];
-	rect.origin.x = 10;
-	rect.origin.y = 10;
+	
 	
 	CGFloat x,y;
 	
-	x = (frame.size.width - rect.size.width)/2.0f;
-	y = (frame.size.height - rect.size.height)/2.0f;
+	x = (frame.size.width - size.width)/2.0f;
+	y = (frame.size.height - size.height)/2.0f;
 	
 	
 	[attrString drawAtPoint:CGPointMake(x, y)];
@@ -306,7 +310,6 @@
 	// 5) Restore the graphics state
 	[ctx restoreGraphicsState];
 	
-	return rect;
 }
 
 
