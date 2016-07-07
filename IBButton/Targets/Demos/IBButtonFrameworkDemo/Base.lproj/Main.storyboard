@@ -957,56 +957,42 @@
                                     <real value="3.4028234663852886e+38"/>
                                 </customSpacing>
                             </stackView>
-                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="pDU-Eg-sbR" userLabel="Bottom Bar" customClass="IBView">
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="NGU-AF-kSf" userLabel="Bottom Bar" customClass="IBView">
                                 <rect key="frame" x="0.0" y="0.0" width="480" height="42"/>
                                 <subviews>
-                                    <stackView distribution="fillEqually" orientation="horizontal" alignment="top" spacing="10" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yX8-oU-nOG">
-                                        <rect key="frame" x="10" y="5" width="460" height="32"/>
+                                    <stackView distribution="fillEqually" orientation="horizontal" alignment="top" spacing="5" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SRt-qF-6bS">
+                                        <rect key="frame" x="5" y="5" width="470" height="32"/>
                                         <subviews>
-                                            <button verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="EZb-gn-KHp" customClass="IBButton">
-                                                <rect key="frame" x="0.0" y="0.0" width="225" height="32"/>
-                                                <buttonCell key="cell" type="bevel" title="Button" bezelStyle="rounded" alignment="center" imageScaling="proportionallyDown" inset="2" id="GCJ-Fh-RZ7">
+                                            <button verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="G6O-H3-bzf" customClass="IBButton">
+                                                <rect key="frame" x="0.0" y="0.0" width="233" height="32"/>
+                                                <buttonCell key="cell" type="bevel" title="A Button" bezelStyle="rounded" alignment="center" imageScaling="proportionallyDown" inset="2" id="OGC-eq-rJ6">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                    <font key="font" size="20" name="ArialMT"/>
+                                                    <font key="font" size="13" name="ArialMT"/>
+                                                </buttonCell>
+                                            </button>
+                                            <button verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="yaU-YB-FsD" customClass="IBButton">
+                                                <rect key="frame" x="238" y="0.0" width="233" height="32"/>
+                                                <buttonCell key="cell" type="bevel" title="Another Button" bezelStyle="rounded" alignment="center" imageScaling="proportionallyDown" inset="2" id="2uG-8b-2lV">
+                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                    <font key="font" size="13" name="ArialMT"/>
                                                 </buttonCell>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="backgroundColour">
-                                                        <color key="value" red="1" green="0.83137254900000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="value" red="0.66274509800000003" green="0.66274509800000003" blue="0.66274509800000003" alpha="1" colorSpace="calibratedRGB"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                         <integer key="value" value="0"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="titleColour">
-                                                        <color key="value" red="0.47843137250000001" green="0.92941176469999998" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="value" white="0.34488636360000002" alpha="1" colorSpace="calibratedWhite"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColour">
-                                                        <color key="value" red="1" green="0.36470588240000001" blue="0.1137254902" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.51820120780000001" colorSpace="calibratedRGB"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                         <real key="value" value="1"/>
                                                     </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                            </button>
-                                            <button verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="b99-PK-RRy" customClass="IBButton">
-                                                <rect key="frame" x="235" y="0.0" width="225" height="32"/>
-                                                <buttonCell key="cell" type="bevel" title="Button" bezelStyle="rounded" alignment="center" imageScaling="proportionallyDown" inset="2" id="HNG-Vn-ak7">
-                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                    <font key="font" size="20" name="ArialMT"/>
-                                                </buttonCell>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="backgroundColour">
-                                                        <color key="value" red="1" green="0.83137254900000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                        <integer key="value" value="0"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="titleColour">
-                                                        <color key="value" red="0.47843137250000001" green="0.92941176469999998" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColour">
-                                                        <color key="value" red="1" green="0.36470588240000001" blue="0.1137254902" alpha="1" colorSpace="calibratedRGB"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="verticalPadding">
                                                         <real key="value" value="1"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
@@ -1023,35 +1009,34 @@
                                     </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="yX8-oU-nOG" secondAttribute="bottom" constant="5" id="B13-cm-ELv"/>
-                                    <constraint firstItem="yX8-oU-nOG" firstAttribute="top" secondItem="pDU-Eg-sbR" secondAttribute="top" constant="5" id="HVb-EK-1Dn"/>
-                                    <constraint firstItem="yX8-oU-nOG" firstAttribute="leading" secondItem="pDU-Eg-sbR" secondAttribute="leading" constant="10" id="mu6-jh-amQ"/>
-                                    <constraint firstAttribute="trailing" secondItem="yX8-oU-nOG" secondAttribute="trailing" constant="10" id="qkc-dN-hXN"/>
+                                    <constraint firstAttribute="trailing" secondItem="SRt-qF-6bS" secondAttribute="trailing" constant="5" id="7jf-00-Awv"/>
+                                    <constraint firstItem="SRt-qF-6bS" firstAttribute="top" secondItem="NGU-AF-kSf" secondAttribute="top" constant="5" id="R2D-7g-bhh"/>
+                                    <constraint firstItem="SRt-qF-6bS" firstAttribute="leading" secondItem="NGU-AF-kSf" secondAttribute="leading" constant="5" id="Rns-Xl-bdR"/>
+                                    <constraint firstAttribute="bottom" secondItem="SRt-qF-6bS" secondAttribute="bottom" constant="5" id="U94-73-Jaj"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="backgroundColour">
-                                        <color key="value" red="0.82745098039999998" green="0.97647058819999999" blue="0.10980392160000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.71332198999999996" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </customView>
                         </subviews>
                         <constraints>
                             <constraint firstItem="Xjo-AU-hMb" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="0pr-JD-WIn"/>
+                            <constraint firstAttribute="bottom" secondItem="NGU-AF-kSf" secondAttribute="bottom" id="1qH-P4-daj"/>
                             <constraint firstItem="c92-Sj-hlm" firstAttribute="centerY" secondItem="m2S-Jp-Qdl" secondAttribute="centerY" id="2ib-W7-kUO"/>
                             <constraint firstItem="5rH-AK-PDF" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="8kI-to-bS2"/>
+                            <constraint firstItem="NGU-AF-kSf" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="9mK-nf-q1Y"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="c92-Sj-hlm" secondAttribute="trailing" constant="10" id="Gtc-Zw-wB5"/>
-                            <constraint firstItem="pDU-Eg-sbR" firstAttribute="top" relation="greaterThanOrEqual" secondItem="c92-Sj-hlm" secondAttribute="bottom" constant="10" id="I3S-Vf-OzG"/>
-                            <constraint firstAttribute="bottom" secondItem="pDU-Eg-sbR" secondAttribute="bottom" id="Jg6-PJ-iiu"/>
                             <constraint firstItem="c92-Sj-hlm" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="10" id="KXZ-Z1-0Pp"/>
                             <constraint firstItem="5rH-AK-PDF" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="N5f-Wl-QXj"/>
-                            <constraint firstItem="pDU-Eg-sbR" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="Qaa-A7-Hmk"/>
+                            <constraint firstItem="NGU-AF-kSf" firstAttribute="top" secondItem="Xjo-AU-hMb" secondAttribute="bottom" id="WjT-X9-E0E"/>
                             <constraint firstItem="c92-Sj-hlm" firstAttribute="top" relation="greaterThanOrEqual" secondItem="5rH-AK-PDF" secondAttribute="bottom" constant="10" id="XEf-pY-3Ge"/>
                             <constraint firstItem="c92-Sj-hlm" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="YSf-lk-YOF"/>
                             <constraint firstAttribute="trailing" secondItem="5rH-AK-PDF" secondAttribute="trailing" id="YhU-Tq-Kjc"/>
+                            <constraint firstAttribute="trailing" secondItem="NGU-AF-kSf" secondAttribute="trailing" id="a4V-DL-kqm"/>
                             <constraint firstAttribute="trailing" secondItem="Xjo-AU-hMb" secondAttribute="trailing" id="lpL-5L-d53"/>
-                            <constraint firstItem="pDU-Eg-sbR" firstAttribute="top" secondItem="Xjo-AU-hMb" secondAttribute="bottom" id="psm-CL-CJl"/>
                             <constraint firstItem="Xjo-AU-hMb" firstAttribute="top" secondItem="5rH-AK-PDF" secondAttribute="bottom" id="uxo-gf-xWM"/>
-                            <constraint firstAttribute="trailing" secondItem="pDU-Eg-sbR" secondAttribute="trailing" id="zm8-3x-662"/>
                         </constraints>
                     </view>
                 </viewController>
