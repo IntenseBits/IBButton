@@ -682,17 +682,14 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </customView>
-                            <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" misplaced="YES" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c92-Sj-hlm">
-                                <rect key="frame" x="162" y="99" width="202" height="72"/>
+                            <stackView distribution="fill" orientation="vertical" alignment="centerX" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c92-Sj-hlm">
+                                <rect key="frame" x="132" y="99" width="217" height="72"/>
                                 <subviews>
-                                    <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SKF-i1-a6x">
-                                        <rect key="frame" x="0.0" y="40" width="202" height="32"/>
+                                    <stackView distribution="fill" orientation="horizontal" alignment="centerY" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SKF-i1-a6x">
+                                        <rect key="frame" x="0.0" y="40" width="217" height="32"/>
                                         <subviews>
-                                            <button verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nZp-S7-Shb" customClass="IBButton">
-                                                <rect key="frame" x="0.0" y="0.0" width="120" height="32"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="120" id="tgU-h5-6yg"/>
-                                                </constraints>
+                                            <button verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="nZp-S7-Shb" customClass="IBButton">
+                                                <rect key="frame" x="0.0" y="0.0" width="135" height="32"/>
                                                 <buttonCell key="cell" type="bevel" bezelStyle="rounded" alignment="center" imageScaling="proportionallyDown" inset="2" id="HZT-db-LlB">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                     <string key="title">A really long
@@ -727,7 +724,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                             <button verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="DGw-Bd-HYg" customClass="IBButton">
-                                                <rect key="frame" x="128" y="0.0" width="74" height="32"/>
+                                                <rect key="frame" x="143" y="0.0" width="74" height="32"/>
                                                 <buttonCell key="cell" type="bevel" title="Button" bezelStyle="rounded" alignment="center" imageScaling="proportionallyDown" inset="2" id="wNV-Tn-zm8">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                     <font key="font" size="24" name="ArialMT"/>
@@ -763,6 +760,10 @@
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="DGw-Bd-HYg" secondAttribute="bottom" id="Vw8-Is-EBE"/>
+                                            <constraint firstItem="DGw-Bd-HYg" firstAttribute="top" secondItem="SKF-i1-a6x" secondAttribute="top" id="XO9-A9-Jlz"/>
+                                        </constraints>
                                         <visibilityPriorities>
                                             <integer value="1000"/>
                                             <integer value="1000"/>
@@ -772,8 +773,8 @@
                                             <real value="3.4028234663852886e+38"/>
                                         </customSpacing>
                                     </stackView>
-                                    <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2KZ-aR-lxI">
-                                        <rect key="frame" x="0.0" y="0.0" width="156" height="32"/>
+                                    <stackView distribution="fill" orientation="horizontal" alignment="centerY" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2KZ-aR-lxI">
+                                        <rect key="frame" x="31" y="0.0" width="156" height="32"/>
                                         <subviews>
                                             <button verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="fPR-ai-HA4" customClass="IBButton">
                                                 <rect key="frame" x="0.0" y="0.0" width="74" height="32"/>

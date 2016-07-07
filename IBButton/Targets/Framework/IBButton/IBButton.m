@@ -159,7 +159,7 @@
 {
 	NSAttributedString *attrString = [self attributedStringFromTitle:self.attributedStringValue];
 	
-	CGRect rect = [attrString boundingRectWithSize:CGSizeMake(self.frame.size.width,CGFLOAT_MAX) options: NSStringDrawingUsesLineFragmentOrigin context:nil];
+	CGRect rect = [attrString boundingRectWithSize:CGSizeMake(self.frame.size.width - 3,CGFLOAT_MAX) options: NSStringDrawingUsesLineFragmentOrigin context:nil];
 	
 	CGSize size = rect.size;
  
