@@ -682,16 +682,21 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </customView>
-                            <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c92-Sj-hlm">
-                                <rect key="frame" x="162" y="99" width="156" height="72"/>
+                            <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" misplaced="YES" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c92-Sj-hlm">
+                                <rect key="frame" x="162" y="99" width="202" height="72"/>
                                 <subviews>
                                     <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SKF-i1-a6x">
-                                        <rect key="frame" x="0.0" y="40" width="156" height="32"/>
+                                        <rect key="frame" x="0.0" y="40" width="202" height="32"/>
                                         <subviews>
-                                            <button verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="nZp-S7-Shb" customClass="IBButton">
-                                                <rect key="frame" x="0.0" y="0.0" width="74" height="32"/>
-                                                <buttonCell key="cell" type="bevel" title="Button" bezelStyle="rounded" alignment="center" imageScaling="proportionallyDown" inset="2" id="HZT-db-LlB">
+                                            <button verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nZp-S7-Shb" customClass="IBButton">
+                                                <rect key="frame" x="0.0" y="0.0" width="120" height="32"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="120" id="tgU-h5-6yg"/>
+                                                </constraints>
+                                                <buttonCell key="cell" type="bevel" bezelStyle="rounded" alignment="center" imageScaling="proportionallyDown" inset="2" id="HZT-db-LlB">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                    <string key="title">A really long
+ button title</string>
                                                     <font key="font" size="24" name="ArialMT"/>
                                                 </buttonCell>
                                                 <userDefinedRuntimeAttributes>
@@ -722,7 +727,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                             <button verticalHuggingPriority="750" horizontalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="DGw-Bd-HYg" customClass="IBButton">
-                                                <rect key="frame" x="82" y="0.0" width="74" height="32"/>
+                                                <rect key="frame" x="128" y="0.0" width="74" height="32"/>
                                                 <buttonCell key="cell" type="bevel" title="Button" bezelStyle="rounded" alignment="center" imageScaling="proportionallyDown" inset="2" id="wNV-Tn-zm8">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                     <font key="font" size="24" name="ArialMT"/>

@@ -159,7 +159,7 @@
 {
 	NSAttributedString *attrString = [self attributedStringFromTitle:self.attributedStringValue];
 	
-	CGRect rect = [attrString boundingRectWithSize:CGSizeMake(self.frame.size.width,self.frame.size.height) options: NSStringDrawingUsesFontLeading |NSStringDrawingTruncatesLastVisibleLine | NSStringDrawingUsesLineFragmentOrigin context:nil];
+	CGRect rect = [attrString boundingRectWithSize:CGSizeMake(self.frame.size.width,CGFLOAT_MAX) options: NSStringDrawingUsesFontLeading | NSStringDrawingTruncatesLastVisibleLine  context:nil];
 	
 	CGSize size = rect.size;
  
@@ -261,11 +261,12 @@
 -(NSAttributedString*)attributedStringFromTitle:(NSAttributedString*)title
 {
 	NSColor *titleColor = [self isHighlighted] ? self.titleColourSelected : self.isMouseOver ? self.titleHoverColour : self.titleColour;
-//	NSMutableParagraphStyle* style = [[NSParagraphStyle alloc] init].mutableCopy;
-//	style.alignment = NSTextAlignmentRight;
+	NSMutableParagraphStyle* style = [[NSParagraphStyle alloc] init].mutableCopy;
+	style.lineBreakMode = NSLineBreakByWordWrapping;
+	style.alignment = NSTextAlignmentCenter;
 	//	NSFont* font =[NSFont fontWithName:@"Helvetica" size:26];
 	NSFont* font = self.font;
-	id attrs = @{NSForegroundColorAttributeName :titleColor,NSFontAttributeName:font};//NSParagraphStyleAttributeName: style
+	id attrs = @{NSForegroundColorAttributeName :titleColor,NSFontAttributeName:font,NSParagraphStyleAttributeName: style};
 	
 	NSAttributedString* attrString = [[NSAttributedString alloc] initWithString:self.title attributes:attrs];
 	//[attrString addAttributes:attrs range:NSMakeRange(0, [[self title] length])];
@@ -293,8 +294,8 @@
 	x = (frame.size.width - size.width)/2.0f;
 	y = (frame.size.height - size.height)/2.0f;
 	
-	
-	[attrString drawAtPoint:CGPointMake(x, y)];
+	[attrString drawWithRect:CGRectMake(x, y, size.width, size.height) options:NSStringDrawingUsesLineFragmentOrigin];
+//	[attrString drawInRect:];
 	
 	//NSRect r = [ [self drawTitle:attrString withFrame:frame inView:controlView];
 	// 5) Restore the graphics state
